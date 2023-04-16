@@ -110,7 +110,7 @@ Show2dArray(newArray);
 5 9 2 3
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
-*/
+*//*
 int[,] CreateRandom2dArray()
 
 {
@@ -169,4 +169,56 @@ double[] CountAverageOfArrayColumns(int[,] array2d)
 int[,] new2dArray = CreateRandom2dArray();
 Show2dArray(new2dArray);
 double[] newArray = CountAverageOfArrayColumns(new2dArray);
-ShowArray(newArray);
+ShowArray(newArray)
+*/
+
+//Написать программу, принимающую показтель степени суммы(N) и возвращающей в консоль
+// треугольник Паскаля, состоящий из показателей степени от N=0 до N.
+
+int[,] CreatePaskalsTriangleArray()
+{
+    Console.WriteLine("Input an exponent:");
+    int exponent = Convert.ToInt32(Console.ReadLine());
+    int colunns = exponent * 2 + 3;
+    int rows = exponent + 1;
+
+    int[,] array = new int[rows, colunns];
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < colunns; j++)
+            array[i, j] = 0;
+
+    return array;
+}
+
+void ShowPaskalsTriangleArray(int[,] array)
+{
+    Console.WriteLine("********PaskalsTriangleArray**********");
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            if (array[i, j] == 0)
+                Console.Write(" ");
+            else            
+                Console.Write(array[i, j]);
+            
+        Console.WriteLine();
+    }
+    Console.WriteLine("**************************************");
+}
+
+
+int[,] newArray = CreatePaskalsTriangleArray();
+newArray[0, newArray.GetLength(1) / 2] = 1;
+for (int i = 1; i < newArray.GetLength(0); i++)
+{
+    for (int j = 1; j < newArray.GetLength(1) - 1; j++)
+    {
+        newArray[i, j] = newArray[i - 1, j - 1] + newArray[i - 1, j + 1];
+    }
+}
+
+ShowPaskalsTriangleArray(newArray);
+
+
+
