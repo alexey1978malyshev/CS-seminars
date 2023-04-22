@@ -127,20 +127,20 @@ ShowArray(CreateArray(8));*/
 
 void SelectionSort(int[] array)
 {
-for (int i = 0; i < array.Length - 1; i++)
-{
-int minPosition = i;
-for (int j = i + 1; j < array.Length; j++)
-{
-if (array[j] < array[minPosition])
-{
-minPosition = j;
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition])
+            {
+                minPosition = j;
+            }
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
 }
-}
-int temporary = array[i];
-array[i] = array[minPosition];
-array[minPosition] = temporary;
-}
-}
-int[]arr = {5,4,7,8,4,5};
+int[] arr = { 5, 4, 7, 8, 4, 5 };
 SelectionSort(arr);

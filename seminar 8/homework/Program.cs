@@ -221,7 +221,7 @@ ShowMatrix(newMatrix);
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
-/*
+
 
 int[,,] Create3DArray()
 
@@ -234,7 +234,7 @@ int[,,] Create3DArray()
     int z = Convert.ToInt32(Console.ReadLine());
 
     //Console.WriteLine("Input min value:");
-    int minVal = 11;
+    int minVal = 50;
     //Console.WriteLine("Input max value:");
     int maxVal = 99;
 
@@ -284,7 +284,7 @@ void ShowCoordinatesOfElem3DArray(int[,,] array)
 
 
 int[,,] new3DArr = Create3DArray();
-int val = new Random().Next(51, 100);
+int val = new Random().Next(11, 100);
 
 //пытаемся найти и устранить дубликаты:
 for (int i = 0, a = 1; i < new3DArr.GetLength(0) - 1; i++, a++)
@@ -297,8 +297,7 @@ for (int i = 0, a = 1; i < new3DArr.GetLength(0) - 1; i++, a++)
             {
                 if (new3DArr[i, j, k] == item)
                 {
-                    new3DArr[i, j, k] = new Random().Next(11, 100);
-
+                    new3DArr[i, j, k] = new Random().Next(11, 50);
                 }               
 
             }
@@ -308,7 +307,7 @@ for (int i = 0, a = 1; i < new3DArr.GetLength(0) - 1; i++, a++)
 }
 
 ShowCoordinatesOfElem3DArray(new3DArr);
-*/
+
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
@@ -316,7 +315,7 @@ ShowCoordinatesOfElem3DArray(new3DArr);
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-
+/*
 int[,] SpiralFillArray()
 {
     Console.WriteLine("Input a quantity of rows:");
@@ -372,6 +371,6 @@ void Show2dArray(int[,] array)
 }
 int[,] newArray = SpiralFillArray();
 Show2dArray(newArray);
-
+*/
 
 
