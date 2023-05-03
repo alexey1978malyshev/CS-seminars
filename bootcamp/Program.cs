@@ -1,6 +1,6 @@
 ﻿
 int n = Convert.ToInt32(Console.ReadLine());
-
+/*
 int[,] multTable = new int[n,n];
 int a = 1, b = 1;
 for (int i = 0; i < multTable.GetLength(0); i++)
@@ -22,3 +22,16 @@ for (int i = 0; i < multTable.GetLength(0); i++)
     }
     System.Console.WriteLine();
 }
+
+*/
+
+for (int i = 1; i <= n; i++)
+{
+    for (int j = 1; j <= n; j++)
+    {
+        Console.Write(i * j);
+        Console.Write("\t");
+    }
+    Console.WriteLine();
+}
+
